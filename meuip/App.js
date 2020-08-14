@@ -12,8 +12,8 @@ import {
 const App: () => React$Node = () => {
   return (
     <>
-    <View>
-      <Text>Olá</Text>
+    <View >
+      <Text style={styles.tamnho}>Chama Edgar</Text>
     </View>
       
     </>
@@ -21,7 +21,9 @@ const App: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
- 
+  tamnho:{
+    fontSize:100
+  }
 });
 
 export default App;

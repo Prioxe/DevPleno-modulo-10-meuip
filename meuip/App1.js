@@ -10,36 +10,29 @@ import {
 import logo from './assets/logo.png'
 
 
-export default class App extends React.Component {
+const App: () => React$Node = () => {
   
-  constructor(props){
-    super(props)
-  
-    this.findMyIp = this.findMyIp.bind(this)
-    this.state = {
-      data: ''
-    }
-  }
+    constructor(props) {
+        super(props);
+        this.findMyIp = this.findMyIp.bind(this);
+        this.state = {
+          data: ""
+        };
+      }
   
   async findMyIp(){
     this.setState({
       data: 'descobrindo IP...'
     })
-    const ip = await fetch('http://httpbin.org/ip')
-    const data = await ip.json()
-    this.setState( {
-      data: data.origin
-    })
   }
 
-  render() {
   return (
-  
+    <>
     <View style={styles.container} >
       <View style={styles.body}>
         <Image source={logo} />
         <Text style={styles.ip}>{this.state.data}</Text>
-        <Button title='Descobrir meu IP!' onPress={this.findMyIp}/>
+        <Button title='Descobrir meu IP!' onPress={  }/>
       </View>
       <View style={styles.footer}>
         <Text style={styles.made}>Feito com sono</Text>
@@ -47,10 +40,9 @@ export default class App extends React.Component {
       </View>
     </View>
       
-    
+    </>
   );
 };
-}
 
 const styles = StyleSheet.create({
   container:{
@@ -80,4 +72,4 @@ const styles = StyleSheet.create({
   } 
 });
 
-
+export default App;

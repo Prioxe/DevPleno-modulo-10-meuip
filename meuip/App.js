@@ -2,7 +2,7 @@
 import React from 'react';
 import {
   StyleSheet,
-  ScrollView,
+  Button,
   View,
   Text,
 
@@ -12,8 +12,15 @@ import {
 const App: () => React$Node = () => {
   return (
     <>
-    <View >
-      <Text style={styles.tamnho}>Chama Edgar</Text>
+    <View style={styles.container} >
+      <View style={styles.body}>
+        <Text style={styles.ip}>IP</Text>
+        <Button title='Descobrir meu IP!' />
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.made}>Feito com sono</Text>
+
+      </View>
     </View>
       
     </>
@@ -21,9 +28,31 @@ const App: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
-  tamnho:{
-    fontSize:100
-  }
+  container:{
+    flex:1,
+    backgroundColor: '#2F2336',
+    alignItems: 'stretch',
+    justifyContent: 'center'
+  },
+  body: {
+    flex:1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  ip:{
+    color: 'white',
+    paddingTop: 20,
+    paddingBottom: 20,
+    fontSize: 25 
+  },
+  made: {
+    color: 'white',
+    textAlign: 'center'
+  },
+  footer: {
+    paddingTop: 10,
+    paddingBottom: 10
+  } 
 });
 
 export default App;
